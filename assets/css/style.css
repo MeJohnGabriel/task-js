@@ -1,0 +1,26 @@
+body{
+    background-color: black;
+}
+
+.formulario{
+    align-items: center;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0rem;
+}
+
+.formulario__registrar, .formulario__corrigir{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+}
+
+.esconder{
+    display: none;
+}
+
+.form-label{
+    color: white;
+}
