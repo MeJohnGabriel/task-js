@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Atividade JavaScript | Trainee Praxis</title>
 </head>
-
-
-
-
-<body>
-    <main class="formulario">
-        <form id="meuForm" class="formulario__registrar">
+<style>
+  tr.selected{
+    background-color: greenyellow;
+  }
+</style>
+  <main class="formulario">
+        <form class="formulario__registrar" id="meuFormRegistrar">
             <div class="mb-3">
                 <label class="form-label">Nome Completo</label>
                 <input id="campoNome" type="text" class="form-control borda__verde">
@@ -33,13 +33,35 @@
               <input id="campoTelefone" type="text" class="form-control" maxlength="14">
             </div>
             <div>
-                <button onclick="adicionar()" id="botaoRegistrar" class="btn btn-success">Registrar</button>
-                <button onclick="toggleTable()" class="btn btn-primary">Mostrar Tabela</button>
+                <button id="botaoRegistrar" class="btn btn-success">Registrar</button>
+                <button onclick="toggleTabela()" id="botaoMostrar" class="btn btn-primary">Mostrar Tabela</button>
             </div>
         </form>
-            </main>
-    <section>     
-     <table id="minhaTabela" class="esconder table table-secondary table-hover table-bordered">
+        <form class="formulario__corrigir esconder" id="meuFormCorrigir">
+            <div class="mb-3">
+                <label class="form-label">Nome Completo</label>
+                <input id="corrigirNome" type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">CPF</label>
+              <input id="corrigirCPF" type="text" class="form-control" maxlength="14">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input id="corrigirEmail" type="email" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Telefone</label>
+              <input id="corrigirTelefone" type="text" class="form-control" maxlength="14">
+            </div>
+            <div>
+              <button id="botaoCorrigir" class="btn btn-warning">Corrigir</button>
+              <button id="botaoExcluir"  class="btn btn-danger">Excluir linha</button>
+              </div>
+        </form>
+    </main>
+    <section>
+        <table id="minhaTabela" class="table table-secondary table-hover table-bordered">
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -52,15 +74,14 @@
             <tbody id="corpoTabela">
               <tr>
                 <th scope="row">1</th>
-                <td>Pedro Antonio de Santos</td>
-                <td>123.456.789-00</td>
-                <td>pedro@gmail.com</td>
-                <td>(71) 9912-4030</td>
+                <td value="Nome">Pedro Antonio de Santos</td>
+                <td value="CPF">123.456.789-00</td>
+                <td value="Email">pedro@gmail.com</td>
+                <td value="Telefone">(71) 9912-4030</td>
               </tr>
-              
             </tbody>
           </table>
-    </section>
+    </section>    
     <!-- Não remova o script abaixo: -->
     <script src="./assets/js/prevencao.js"></script> 
 </body>
