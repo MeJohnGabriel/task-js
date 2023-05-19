@@ -83,13 +83,13 @@ botaoRegistrar.addEventListener('click', adicionarCorpoTabela)  //corpotabela= e
     
          corpoTabela.appendChild(linha);        //msm ideia...
 
-         function resettxt(){           ///DEIXAR OS INPUTS CLEAN
+         function resetInputs(){           ///RESETAR OS INPUTS
              cellNome.value =        '';
               cellCpf.value =        '';
                cellEmail.value =     '';
                 cellTelefone.value = '';
                 }
-                  resettxt()
+                  resetInputs()
             }     
  
         function insertCell(value) {
@@ -119,9 +119,7 @@ botaoRegistrar.addEventListener('click', adicionarCorpoTabela)  //corpotabela= e
 
 function selecionarLinha() {
 
-    this.classList.add('excluir_corrigir')
     selecionarLinha = this
-
     esconderRegistrarCorrigir()
 }
 const botaoExcluir = document.getElementById('botaoExcluir');
@@ -162,14 +160,13 @@ function Corrigir() {   ///DÚVIDA DE COMO ESTÁ SENDO USADO 'FOR' E 'IF' NESSA 
     }    
      
     
-    
-function resettxt() {
+    ///RESETA O TEXTO DOS INPUTS / ESSE COD PEGUEI DE JONMAR MAS CONSEGUI ENTENDER, O DE CORRIGIR Q N  
+     function resetInputs() {
     inputs.forEach((input) => {
     input.value = '';
     });
     } 
-    resettxt()
-
+    resetInputs()
     esconderRegistrarCorrigir()
     }
 
