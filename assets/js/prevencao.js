@@ -160,7 +160,7 @@ function Corrigir() {   ///DÚVIDA DE COMO ESTÁ SENDO USADO 'FOR' E 'IF' NESSA 
     }    
      
     
-    ///RESETA O TEXTO DOS INPUTS / ESSE COD PEGUEI DE JONMAR MAS CONSEGUI ENTENDER, O DE CORRIGIR Q N  
+    ///RESET DO O TEXTO DOS INPUTS
      function resetInputs() {
     inputs.forEach((input) => {
     input.value = '';
