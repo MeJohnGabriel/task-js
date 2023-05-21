@@ -146,20 +146,30 @@ function esconderRegistrarCorrigir(){
     }
 
 function Corrigir() {   ///DÚVIDA DE COMO ESTÁ SENDO USADO 'FOR' E 'IF' NESSA SITUAÇÃO 
-    const cells = selecionarLinha.getElementsByTagName('td');
+    const cells = selecionarLinha.getElementsByTagName('td'); // Pega todos os elementos TD do elemento selecionarLinha
     
-    const inputs = [corrigirNome, corrigirCPF, corrigirEmail, corrigirTelefone];
-    const cell_valores = [0, 1, 2, 3];
+    const inputs = [corrigirNome, corrigirCPF, corrigirEmail, corrigirTelefone]; // Coloca os inputs em um array ordenado baseado no formulário do HTML
+    const cell_valores = [0, 1, 2, 3]; // Passa a ordem que os elementos vão aparecer servir de base para alinhar os valores dos input com as células
     
-    for (let i = 0; i < inputs.length; i++) {
-    const input = inputs[i];
-    const cell_valor = cell_valores[i];    
-    if (input.value.length > 0) {
-      cells[cell_valor].innerHTML = input.value;
+    for (let i = 0; i < inputs.length; i++) { // Cria um loop baseado no número de inputs do formulário do HTML
+    const input = inputs[i]; // Isola o input tratado na repetição em questão
+    const cell_valor = cell_valores[i]; // Isola a ordem base da celular para servir de chave
+    if (input.value.length > 0) { // Valida que o input isolado não está vazio
+      cells[cell_valor].innerHTML = input.value; // Como o input não está vazio, coloca os valores na célula
     }
     }    
      
-    
+    /*
+        Basicamente, os loops(for) então sendo usados para ler um input de cada vez, enquanto o loop(for) está executando
+        o condicional(if) válida se o formulário não está vazio antes de colocar o corrigir a linha.
+
+        Essa lógica é útil se você considerar que não pode apagar um dado registrado, somente atualizar
+        Por exemplo, impede que a pessoa apague o CPF registrado, não impede que atualize, apesar de que há meios
+        de burlar isso, colocando espaços(' '), já que são diferentes de zero
+
+    */
+
+
     ///RESET DO O TEXTO DOS INPUTS
      function resetInputs() {
     inputs.forEach((input) => {
